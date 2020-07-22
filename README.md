@@ -2,7 +2,7 @@
 
 **Link Scanner - program for extracting an URL from image.**
 
-Take a photo which contains an URL to extract URL from the photo as a text. After you follow this URL.
+Take a photo which contains an URL to extract it from the photo as a text. After you can follow this URL.
 
 <img src="Screenshots/Picture.jpg" width="280"/>
 
