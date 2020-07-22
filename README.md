@@ -1,6 +1,8 @@
 # LinkScanner
 
-**Link Scanner - program for extracting an URL from image**
+**Link Scanner - program for extracting an URL from image.**
+
+Take a photo which contains an URL to extract URL from the photo as a text. After you follow this URL.
 
 <img src="Screenshots/Picture.jpg" width="280"/>
 
@@ -13,6 +15,7 @@
 ## History page
 <img src="Screenshots/HistoryPage.jpg" width="280"/> <img src="Screenshots/ContextMenu.jpg" width="280"/>
 
+## Page where you can follow the URL
 <img src="Screenshots/EditPage.jpg" width="280"/> <img src="Screenshots/AboutPage.jpg" width="280"/>
 
 ## Attention!!!
