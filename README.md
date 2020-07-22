@@ -19,4 +19,4 @@ Take a photo which contains an URL to extract it from the photo as a text. After
 <img src="Screenshots/EditPage.jpg" width="280"/> <img src="Screenshots/AboutPage.jpg" width="280"/>
 
 ## Attention!!!
-**This repository is made only for job summary, and this program won't extract URL from image, because API-Key was removed from this project for security reasons.**
+**This repository is made only for job summary, and this copy of the program won't extract URL from image, because API-Key was removed from this project for security reasons.**
