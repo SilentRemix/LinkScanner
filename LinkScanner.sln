@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkScanner.Android", "LinkScanner\LinkScanner.Android\LinkScanner.Android.csproj", "{482BDF97-D4A2-4984-B98C-219163DB093B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkScanner", "LinkScanner\LinkScanner\LinkScanner.csproj", "{258A6320-B255-4CCB-B6AB-BABA384FB34C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{482BDF97-D4A2-4984-B98C-219163DB093B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{258A6320-B255-4CCB-B6AB-BABA384FB34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{258A6320-B255-4CCB-B6AB-BABA384FB34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{258A6320-B255-4CCB-B6AB-BABA384FB34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{258A6320-B255-4CCB-B6AB-BABA384FB34C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5049EC9B-0D42-4074-B28E-115A543F1B00}
+	EndGlobalSection
+EndGlobal

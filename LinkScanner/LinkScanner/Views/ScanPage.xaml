@@ -1,0 +1,65 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:LinkScanner.ViewModels;assembly=LinkScanner"
+             mc:Ignorable="d"
+             x:Class="LinkScanner.Views.ScanPage"
+             Title="Scan">
+
+    <ContentPage.BindingContext>
+        <viewModels:ScanViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <StackLayout AbsoluteLayout.LayoutBounds="0.5,0.45,0.85,0.15" AbsoluteLayout.LayoutFlags="All"
+                     Spacing="15">
+
+            <Button Text="CAPTURE IMAGE"
+                    Command="{Binding CaptureCommand}"
+                    CornerRadius="8"
+                    BackgroundColor="#2c3e50"
+                    TextColor="White" 
+                    VerticalOptions="Center"/>
+
+            <Button Text="LOAD IMAGE"
+                Command="{Binding LoadCommand}"
+                CornerRadius="8"
+                BackgroundColor="#2c3e50"
+                TextColor="White" 
+                VerticalOptions="Center"/>
+
+        </StackLayout>
+
+        <ActivityIndicator IsRunning="{Binding IsBusy, Mode=TwoWay}"
+                           HeightRequest="35"
+                           WidthRequest="35"
+                           AbsoluteLayout.LayoutBounds="0.5,0.65"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <Image Source="{Binding IndicatorImageSource, Mode=TwoWay}"
+               IsVisible="{Binding IsVisible}"
+               HeightRequest="30"
+               WidthRequest="30"
+               AbsoluteLayout.LayoutBounds="0.5,0.65"
+               AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <Label 
+            FontSize="14"
+            HorizontalTextAlignment="Center"
+            Text="{Binding IndicatorMessage, Mode=TwoWay}"
+            IsVisible="{Binding IsVisible}" 
+            AbsoluteLayout.LayoutBounds="0.5,0.75,0.75,0.1"
+            AbsoluteLayout.LayoutFlags="All"/>
+
+        <Button Text="About app"
+                TextColor="White"
+                Command="{Binding AboutAppCommand}"
+                CornerRadius="8"
+                BackgroundColor="#2c3e50"
+                AbsoluteLayout.LayoutBounds="0.5,0.95"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+    </AbsoluteLayout>
+</ContentPage>

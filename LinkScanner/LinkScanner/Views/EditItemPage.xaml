@@ -1,0 +1,42 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:LinkScanner.ViewModels;assembly=LinkScanner"
+             mc:Ignorable="d"
+             x:Class="LinkScanner.Views.EditItemPage" x:DataType="viewModels:EditItemViewModel">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Command="{Binding CancelCommand}"/>
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" CommandParameter="{Binding .}"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout  Spacing="20" Padding="15">
+
+            <Label Text="URL:" 
+                   FontSize="Medium" 
+                   TextColor="DimGray"/>
+
+            <Editor Text="{Binding Item.Url}" 
+                    AutoSize="TextChanges" />
+
+            <Button Text="Open in Browser" 
+                    Command="{Binding OpenWebCommand}"
+                    BackgroundColor="#2c3e50"
+                    TextColor="White"
+                    CornerRadius="8"/>
+
+            <Label Text="Image:" 
+                   FontSize="Medium" 
+                   TextColor="DimGray" />
+
+            <Frame CornerRadius="10"
+                   Padding="0"
+                   IsClippedToBounds="True">
+                <Image Source="{Binding Item.ImagePath}" />
+            </Frame>    
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,79 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:LinkScanner.ViewModels;assembly=LinkScanner"
+             mc:Ignorable="d"
+             x:Class="LinkScanner.Views.HistoryPage"
+             Title="History"
+             x:Name="This">
+
+    <ContentPage.BindingContext>
+        <viewModels:HistoryViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <AbsoluteLayout>
+            <Label Text="Here will be your history of scanners"
+               FontSize="15"
+               TextColor="DimGray"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5" 
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               IsVisible="{Binding LabelVisible}"/>
+
+            <ListView ItemsSource="{Binding Items}"
+                  ItemTapped="ListView_OnItemTapped"
+                  SelectionMode="None"
+                  HasUnevenRows="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions >
+
+                                <!--Here "This" is the reference to x:Name at the top-->
+                                <MenuItem Text="Add favorites"
+                                  Command="{Binding Source={x:Reference This}, Path=BindingContext.AddFavoritesCommand}"
+                                  CommandParameter="{Binding .}"
+                                  IconImageSource="ribbon256x.png"/>
+
+                                <MenuItem Text="Share" 
+                                  Command="{Binding Source={x:Reference This}, Path=BindingContext.ShareCommand}" 
+                                  CommandParameter="{Binding .}" 
+                                  IconImageSource="share256x.png"/>
+
+                                <MenuItem Text="Delete"
+                                  Command="{Binding Source={x:Reference This}, Path=BindingContext.DeleteItemCommand}"
+                                  CommandParameter="{Binding .}" 
+                                  IconImageSource="delete256x.png"/>
+
+                            </ViewCell.ContextActions>
+
+                            <StackLayout Orientation="Horizontal" 
+                                 Padding="8">
+
+                                <Image Source="chain256x.png" 
+                               HeightRequest="50" 
+                               WidthRequest="50"/>
+
+                                <StackLayout HorizontalOptions="StartAndExpand">
+                                    <Label Text="URL" 
+                                   TextColor="Black" 
+                                   FontSize="16"/>
+
+                                    <Label Text="{Binding StringFormat='{0:g}', Path=CreationTime}" 
+                                   TextColor="DarkGray"/>
+
+                                </StackLayout>
+
+                            </StackLayout>
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

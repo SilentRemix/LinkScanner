@@ -1,0 +1,64 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:LinkScanner.ViewModels;assembly=LinkScanner"
+             mc:Ignorable="d"
+             x:Class="LinkScanner.Views.AboutPage"
+             Title="About app">
+    <ContentPage.BindingContext>
+        <viewModels:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <AbsoluteLayout>
+
+        <Frame CornerRadius="20"
+               Padding="0"
+               IsClippedToBounds="True"
+               HeightRequest="125"
+               WidthRequest="125"
+               BackgroundColor="#2C3E50"
+               AbsoluteLayout.LayoutBounds="0.5, 0.2"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+
+            <Image Source="xamarin_icon.png"
+                   Margin="20"/>
+        </Frame>
+
+        <Label Text="Link Scanner"
+               TextColor="Black"
+               FontSize="22"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand" 
+               AbsoluteLayout.LayoutBounds="0.5, 0.385"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <Label Text="Contact me:"
+               TextColor="Black"
+               FontSize="17"
+               AbsoluteLayout.LayoutBounds="0.5, 0.505"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <Label AbsoluteLayout.LayoutBounds="0.5, 0.55"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="{Binding EmailString}"
+                          FontSize="17"
+                          TextColor="#2c3e50"
+                          TextDecorations="Underline">
+                        <Span.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EmailCommand}"/>
+                        </Span.GestureRecognizers>
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label Text="Made by Khamroev Jushkinbek."
+               FontSize="17"
+               AbsoluteLayout.LayoutBounds="0.5, 0.6"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>
+
+</ContentPage>
